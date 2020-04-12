@@ -40,16 +40,15 @@ dd {
   background-color: #04befc;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   position: relative;
   z-index: 11;
   opacity: 0.8;
 }
 
-.search_bar img {
+.search_bar img:first-of-type {
   margin-left: 23px;
+  position:absolute;
+  top: 18px;
 }
 
 .search_bar input {
@@ -58,10 +57,19 @@ dd {
   height: 34px;
   border-radius: 17px;
   border: 0px;
-  background: url("./imgs/zoom.png") 265px center no-repeat
-    rgba(255, 255, 255, 0.5);
+  background:   rgba(255, 255, 255, 0.5);
   text-indent: 15px;
   outline: none;
+  position: absolute;
+  right:14px;
+  top:12px;
+}
+
+.search_bar img:last-of-type{
+  position: absolute;
+  top:20px;
+  right:50px;
+  cursor: pointer;
 }
 
 .center_con {
