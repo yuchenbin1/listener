@@ -28,7 +28,7 @@
            <li v-for="item in musicList">
              <a href="javascript:;" @click="playMusic(item.id),changePicture(item.id),getComment(item.id)"></a> 
              <b v-cloak>{{item.name}}</b>
-             <span v-cloak v-if="item.mvid!=0" @click="playMv(item.mvid)"><i></i></span>
+             <span v-cloak v-if="item.mvid!=0" @click="playMv(item.mvid),pauseAudio()" ><i></i></span>
            </li>
           </ul>
           <img src="./imgs/line.png" v-cloak class="switch_btn" alt="">
@@ -56,7 +56,7 @@
         </div>
       </div>
       <div class="audio_con">
-        <audio ref='audio'  @play="play" @pause="pause" :src="musicUrl" controls autoplay loop class="myaudio"></audio>
+        <audio ref='audio' id="audio" @play="play" @pause="pause" :src="musicUrl" controls autoplay loop class="myaudio"></audio>
       </div>
       <div class="video_con" v-show="isShow"  style="display: none;">
         <video :src="mvUrl" controls="controls"></video>

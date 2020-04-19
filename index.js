@@ -58,6 +58,11 @@ var app=new Vue({
 			//console.log('pause');
 			this.isPlaying=false;
 		},
+		pauseAudio:function(){
+			this.isPlaying=false;
+			const audio=document.querySelector('audio');
+			audio.pause();
+		},
 		playMv:function(mvId){
 			var that=this;
 			axios.get("https://autumnfish.cn/mv/url?id="+mvId)
